@@ -7,11 +7,11 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-z3 = "^0.2.0"
 fire = "^0.3.1"
 pyyaml = "^5.3.1"
-PyPDF2 = "^1.26.0"
 coloredlogs = "^14.0"
+z3-solver = "^4.8.9"
+fpdf = "^1.7.2"
 
 [tool.poetry.dev-dependencies]
 yapf = "^0.30.0"

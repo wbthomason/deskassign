@@ -1,12 +1,4 @@
 [[package]]
-name = "boto"
-version = "2.49.0"
-description = "Amazon Web Services Library"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "coloredlogs"
 version = "14.0"
 description = "Colored terminal output for Python's logging module"
@@ -31,6 +23,14 @@ python-versions = "*"
 [package.dependencies]
 six = "*"
 termcolor = "*"
+
+[[package]]
+name = "fpdf"
+version = "1.7.2"
+description = "Simple PDF generation for Python"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "humanfriendly"
@@ -64,14 +64,6 @@ name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
 category = "dev"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "pypdf2"
-version = "1.26.0"
-description = "PDF toolkit"
-category = "main"
 optional = false
 python-versions = "*"
 
@@ -133,32 +125,30 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "z3"
-version = "0.2.0"
-description = "Backup ZFS snapshots to S3"
+name = "z3-solver"
+version = "4.8.9.0"
+description = "an efficient SMT solver library"
 category = "main"
 optional = false
 python-versions = "*"
 
-[package.dependencies]
-boto = "*"
-
 [metadata]
 lock-version = "1.0"
 python-versions = "^3.8"
-content-hash = "19690f65e8eb33394b5fec281c800714c04d4086b6e8c56693cb8196d804f30e"
+content-hash = "3fd005ef47b11d8b38f121a593bc90858ae587201efbcd85c544f513ee678b71"
 
 [metadata.files]
-boto = [
-    {file = "boto-2.49.0-py2.py3-none-any.whl", hash = "sha256:147758d41ae7240dc989f0039f27da8ca0d53734be0eb869ef16e3adcfa462e8"},
-    {file = "boto-2.49.0.tar.gz", hash = "sha256:ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"},
-]
 coloredlogs = [
     {file = "coloredlogs-14.0-py2.py3-none-any.whl", hash = "sha256:346f58aad6afd48444c2468618623638dadab76e4e70d5e10822676f2d32226a"},
     {file = "coloredlogs-14.0.tar.gz", hash = "sha256:a1fab193d2053aa6c0a97608c4342d031f1f93a3d1218432c59322441d31a505"},
 ]
 fire = [
     {file = "fire-0.3.1.tar.gz", hash = "sha256:9736a16227c3d469e5d2d296bce5b4d8fa8d7851e953bda327a455fc2994307f"},
+]
+fpdf = [
+    {file = "fpdf-1.7.2.tar.gz", hash = "sha256:125840783289e7d12552b1e86ab692c37322e7a65b96a99e0ea86cca041b6779"},
+    {file = "fpdf-1.7.2.win-amd64.exe", hash = "sha256:9542f6ad0791d673955da954a0cf3554a0affac79deab87bee06b9b4d4e60990"},
+    {file = "fpdf-1.7.2.win32.exe", hash = "sha256:0a94eb783ee933e32a44ad949a1aa6c3ca6fb35b608db53f8b216aec52fc1fb5"},
 ]
 humanfriendly = [
     {file = "humanfriendly-8.2-py2.py3-none-any.whl", hash = "sha256:e78960b31198511f45fd455534ae7645a6207d33e512d2e842c766d15d9c8080"},
@@ -183,9 +173,6 @@ mypy = [
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
-]
-pypdf2 = [
-    {file = "PyPDF2-1.26.0.tar.gz", hash = "sha256:e28f902f2f0a1603ea95ebe21dff311ef09be3d0f0ef29a3e44a932729564385"},
 ]
 pyreadline = [
     {file = "pyreadline-2.1.win-amd64.exe", hash = "sha256:9ce5fa65b8992dfa373bddc5b6e0864ead8f291c94fbfec05fbd5c836162e67b"},
@@ -244,6 +231,10 @@ yapf = [
     {file = "yapf-0.30.0-py2.py3-none-any.whl", hash = "sha256:3abf61ba67cf603069710d30acbc88cfe565d907e16ad81429ae90ce9651e0c9"},
     {file = "yapf-0.30.0.tar.gz", hash = "sha256:3000abee4c28daebad55da6c85f3cd07b8062ce48e2e9943c8da1b9667d48427"},
 ]
-z3 = [
-    {file = "z3-0.2.0.tar.gz", hash = "sha256:34819e964d71e1474f933b34b9e65f0d021ccfc9d9edbbded54d54c1a9352b90"},
+z3-solver = [
+    {file = "z3-solver-4.8.9.0.tar.gz", hash = "sha256:504d4154ebd38533fc1751a0e04878482757044cebf512243f6da8624f484b70"},
+    {file = "z3_solver-4.8.9.0-py2.py3-none-macosx_10_14_x86_64.whl", hash = "sha256:91d87f5448aed95ecc410c5c8ead590c4581c3679b7fab1a61792087c5195da6"},
+    {file = "z3_solver-4.8.9.0-py2.py3-none-manylinux1_x86_64.whl", hash = "sha256:0ec84c898b240810f927a28bfdd350ff3c485b498c6ec4a0d62911f3d51cfacb"},
+    {file = "z3_solver-4.8.9.0-py2.py3-none-win32.whl", hash = "sha256:9a20e7bafb82b40b87128086d29b54eef6634657df0adb96b79811225e1eab84"},
+    {file = "z3_solver-4.8.9.0-py2.py3-none-win_amd64.whl", hash = "sha256:33d6793784b0386b3e42547d66dc89d8e959201e4b7eec8d286871575a1b4224"},
 ]

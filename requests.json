@@ -1,0 +1,17 @@
+[
+  {
+    "desk": 1,
+    "student_name": "A",
+    "available_times": [2, 3, 5]
+  },
+  {
+    "desk": 2,
+    "student_name": "B",
+    "available_times": [2, 4]
+  },
+  {
+    "desk": 3,
+    "student_name": "C",
+    "available_times": [1, 2, 3, 4, 5]
+  }
+]
