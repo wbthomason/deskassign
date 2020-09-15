@@ -195,13 +195,18 @@ def main(
 ):
   '''
   Main point of entry. Takes as arguments:
+
       desk_data_filename: Filename for a CSV file giving for each desk a unique ID, its office
       number, and coordinates of its centroid
+
       requests_filename: Filename for a JSON file giving each student request with student name,
       assigned desk, and list of available time blocks
+
       parameters_filename: Filename for a YAML file giving the safety distance to be used, the
       office density cap, the floor density cap, and the list of time blocks
+
       output_filename: Filename to which to output the CSV for a schedule
+
       make_pdfs: Boolean describing whether the complete (CSV + PDF) output is desired
   '''
   with open(desk_data_filename, newline='') as desk_data_file,\
