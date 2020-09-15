@@ -185,12 +185,12 @@ def output(schedule, output_file, make_pdfs):
 
     print('Generating office PDFs...')
     for office, assignments in office_schedules.items():
-      title = f'Desk use assignments for Room {office}'
+      title = f'Desk use assignments for Room {office}\n'
       pdf = PDF()
       pdf.add_page()
       pdf.set_xy(0.0, 0.0)
       pdf.set_font('Arial', 'B', 20)
-      pdf.cell(ln=2, w=210, h=10, align='C', txt=title)
+      pdf.write(h=10, txt=title)
       pdf.set_title(title)
       pdf.set_font('Arial', '', 12)
       block_occupancy = defaultdict(list)
@@ -199,12 +199,12 @@ def output(schedule, output_file, make_pdfs):
 
       for block in block_occupancy:
         pdf.set_font('Arial', 'B', 12)
-        pdf.cell(h=10, w=210, txt=f'Allowed usage for block {block}:')
+        pdf.write(h=10, txt=f'Allowed usage for block {block}: ')
         pdf.set_font('Arial', '', 12)
-        pdf.cell(
+        pdf.write(
             h=10,
-            w=210,
             txt=', '.join([f'{student} at desk {desk}' for student, desk in block_occupancy[block]])
+            + '\n'
         )
 
       pdf.output(f'{office}.pdf', 'F')
